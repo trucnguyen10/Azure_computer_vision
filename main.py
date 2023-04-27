@@ -15,19 +15,22 @@ computervision_client = ComputerVisionClient(
     endpoint, CognitiveServicesCredentials(subscription_key))
 
 # images_folder = os.path.join (os.path.dirname(os.path.abspath(__file__)), "images")
-remote_image_url = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg"
-file_path = 'C:/Users/hersa/ComputerVision/Jennie.jpg'
+# remote_image_url = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/landmark.jpg"
+folder = 'C:/Users/hersa/ComputerVision'
+files = os.listdir(folder)
+for file in files:
+    file_path = os.path.join(folder, file)
 
-with open(file_path, mode='rb') as image_stream:
-    description_results = computervision_client.describe_image_in_stream(
-        image_stream)
-    print("Description of remote iamge: ")
-    if (len(description_results.captions) == 0):
-        print("No description detected")
-    else:
-        for caption in description_results.captions:
-            print("'{}' with confidence {:.2f}".format(
-                caption.text, caption.confidence))
+    with open(file_path, mode='rb') as image_stream:
+        description_results = computervision_client.describe_image_in_stream(
+            image_stream)
+        print("Description of remote iamge: ")
+        if (len(description_results.captions) == 0):
+            print("No description detected")
+        else:
+            for caption in description_results.captions:
+                print("'{}' with confidence {:.2f}".format(
+                    caption.text, caption.confidence))
 # print("===== Tag an image - remote =====")
 # # Call API with remote image
 # tags_result_remote = computervision_client.tag_image(remote_image_url)
