@@ -44,7 +44,7 @@ for file in files:
             image_draw.text((left + 5, top + height - 30),
                             text, (255, 0, 0), font=font)
 
-        image.show()
+        # image.show()
         image.save(os.path.join(out_folder, file))
 
         # -------------------Description----------------------
