@@ -27,6 +27,9 @@ for file in files:
     file_path = os.path.join(folder, file)
     image = Image.open(file_path)
     image_draw = ImageDraw.Draw(image)
+
+    # -------------------Detection----------------------
+
     with open(file_path, mode='rb') as image_stream:
         results = computervision_client.detect_objects_in_stream(image_stream)
 
@@ -60,6 +63,16 @@ for file in files:
             for caption in description_results.captions:
                 print("'{}' with confidence {:.2f}".format(
                     caption.text, caption.confidence * 100))
+
+    with open(file_path, mode='rb') as image_stream:
+        color_results = computervision_client.analyze_image_in_stream(
+            image_stream, visual_features=[VisualFeatureTypes.color])
+        dominant_color_foreground = color_results.color.dominant_color_foreground
+        dominant_color_background = color_results.color.dominant_color_background
+        accent_color = color_results.color.accent_color
+        print('Dominant color foreground: ' + dominant_color_foreground)
+        print('Dominant color background: ' + dominant_color_background)
+        print('Accent color: ' + accent_color)
 
     # results = computervision_client.analyze_image_by_domain_in_stream(
     #     'celebrities', image_stream)
