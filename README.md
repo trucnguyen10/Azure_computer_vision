@@ -3,8 +3,7 @@
               + myenv\Scripts\activate <br />
               + python main.py <br />
 
-A description of what the code does:
-
+**A description of what the code does: **
 1. The code imports necessary modules from Azure Cognitive Services, array, os, PIL, and sys. <br />
 2. The subscription key and endpoint are defined for the Computer Vision API. <br />
 3. The code specifies the input and output folders where the images to be processed are stored and where the output images will be saved. <br />
