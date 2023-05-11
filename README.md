@@ -23,3 +23,6 @@
 
 ![timesquare](https://github.com/trucnguyen10/Azure_computer_vision/assets/87359204/5a6bc9c4-be8e-4271-99f1-e36142fd7f33)
 ![timesquare](https://github.com/trucnguyen10/Azure_computer_vision/assets/87359204/c68fa8b3-f051-46de-aee1-7771f2537f91)
+
+![football](https://github.com/trucnguyen10/Azure_computer_vision/assets/87359204/ca2f5e18-a9ff-4ba7-b25a-1ac0b2d454f5)
+![football](https://github.com/trucnguyen10/Azure_computer_vision/assets/87359204/4e2ceae9-884c-4f75-aa3f-9dc4bf0e83fc)
